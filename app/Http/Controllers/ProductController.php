@@ -166,7 +166,7 @@ class ProductController extends Controller
                 'similarProducts',
             ])->findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return response()->json("Document Not Found", 404);
+            return response()->json("Product Not Found", 404);
         }
         return response()->json($product, 200);
     }
@@ -271,7 +271,7 @@ class ProductController extends Controller
         try {
             $product = Product::with(['stores'])->findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return response()->json("Document Not Found", 404);
+            return response()->json("Product Not Found", 404);
         }
         // if (!empty($product->stores)) {
         //     return response()->json("Product is related to store", 422);
