@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "adbc396a-38ba-4ad7-bfa3-0c72581d9a11",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products?itemsCount=5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "itemsCount",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/927",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"927"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Shirt1155\",\n\t\"set_id\": 1,\n\t\"sku\": \"BB-00039\",\n\t\"active\": true,\n\t\"current_price\": 790,\n\t\"old_price\": 1580,\n\t\"quantity\": 0,\n\t\"unlimited_quantity\": true,\n\t\"tax_type\": 1,\n\t\"brief\": \"The old belief was that MFC, which stands for Melamine Faced Chipboards, could not be compared to MDF, since the latter is way better. However today, MFC is manufactured in a complete different way, and this has made a great difference to the properties of the material.\",\n\t\"description\": \"<p>The old belief was that <b>MFC</b>, which stands for Melamine Faced Chipboards, could not be compared to MDF, since the latter is way better. However today, MFC is manufactured in a complete different way, and this has made a great difference to the properties of the material.</p>\",\n\t\"url\": \"the-spacious-bed-BB-00039\",\n\t\"meta_title\": \"SPACIOUS\",\n\t\"meta_description\": \"\",\n\t\"meta_keywords\": \"\",\n\t\"price_specials\": [\n\t\t{\"price\": 700.00, \"from_date\": \"2019-01-01\", \"to_date\": \"2019-01-31\" },\n\t\t{\"price\": 750.00, \"from_date\": \"2019-02-01\", \"to_date\": \"2019-02-28\" }\n\t],\n\n\t\"price_info\": {\n\t\t\"cost\": null,\n\t\t\"msrp\": null,\n\t\t\"display_type\": 1\n\t},\n\t\"quantity_info\": {\n\t\t\"min_qty_allowed\": 0,\n\t\t\"max_qty_allowed\": 0,\n\t\t\"out_of_stock_threshold\": 0,\n\t\t\"stock_status\": 1,\n\t\t\"notify_for_quantity\": true,\n\t\t\"quantity_to_notify\": 5,\n\t\t\"sell_in_box\": false,\n\t\t\"items_per_box\": 0,\n\t\t\"allow_requesting_when_product_out_of_stock\": false\n\t},\n\t\"categories\": [1,2,3],\n\t\"stores\": [1, 2],\n\t\"media\": [\n\t\t{\"type\": 1, \"path\": \"photo.jpg\", \"caption\":\"test file\", \"main_photo\": false, \"sort_order\": 2},\n\t\t{\"type\": 1, \"path\": \"photo.jpg\", \"caption\":\"test file\", \"main_photo\": true, \"sort_order\": 1},\n\t\t{\"type\": 2, \"path\": \"video.mp4\", \"caption\":\"\", \"main_photo\": false, \"sort_order\": 3}\n\t],\t\n\t\"brands\": [1,2,3],\n\t\"suppliers\": [1,2,3],\n\t\"tags\": [1,2,3],\n\t\"files\": [\n\t\t{\"path\": \"tech.pdf\", \"caption\":\"test file\", \"sort_order\": 1},\n\t\t{\"path\": \"tech2.pdf\", \"caption\":\"test file\", \"sort_order\": 2}\n\t],\n\t\"product_display\": [5,3,6],\n\t\"related_products\": [6,9,8],\n\t\"similar_products\": [10,11,12,13]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"shirt-edited\",\r\n    \"set_id\": 1,\r\n    \"sku\": \"BB-00039\",\r\n    \"active\": false,\r\n    \"current_price\": 790,\r\n    \"old_price\": 1580,\r\n    \"quantity\": 0,\r\n    \"unlimited_quantity\": true,\r\n    \"tax_type\": 1,\r\n    \"brief\": \"The old belief was that MFC, which stands for Melamine Faced Chipboards, could not be compared to MDF, since the latter is way better. However today, MFC is manufactured in a complete different way, and this has made a great difference to the properties of the material.\",\r\n    \"description\": \"<p>The old belief was that <b>MFC</b>, which stands for Melamine Faced Chipboards, could not be compared to MDF, since the latter is way better. However today, MFC is manufactured in a complete different way, and this has made a great difference to the properties of the material.</p>\",\r\n    \"url\": \"the-spacious-bed-BB-00039\",\r\n    \"meta_title\": \"SPACIOUS\",\r\n    \"meta_description\": \"\",\r\n    \"meta_keywords\": \"\",\r\n    \"price_specials\": {\r\n        \"add\": [\r\n            {\r\n                \"price\": 701.0,\r\n                \"from_date\": \"2019-01-01\",\r\n                \"to_date\": \"2019-01-31\"\r\n            },\r\n            {\r\n                \"price\": 650.0,\r\n                \"from_date\": \"2019-02-01\",\r\n                \"to_date\": \"2019-02-28\"\r\n            }\r\n        ],\r\n        \"update\": [\r\n            {\r\n                \"id\": 1,\r\n                \"price\": 700.0,\r\n                \"from_date\": \"2019-02-01\",\r\n                \"to_date\": \"2019-10-1\"\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"price\": 750.0,\r\n                \"from_date\": \"2019-03-01\",\r\n                \"to_date\": \"2019-06-28\"\r\n            }\r\n        ],\r\n        \"del\": [3, 4]\r\n    },\r\n    \"categories\": [1, 2, 3]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/92",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"92"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
