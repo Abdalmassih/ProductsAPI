@@ -1,0 +1,90 @@
+{
+    "name": "SPACIOUS",
+    "set_id": 11,
+    "sku": "BB-00039",
+    "active": true,
+    "current_price": 790,
+    "old_price": 1580,
+    "quantity": 0,
+    "unlimited_quantity": true,
+    "tax_type": 1,
+    "brief": "The old belief was that MFC, which stands for Melamine Faced Chipboards, could not be compared to MDF, since the latter is way better. However today, MFC is manufactured in a complete different way, and this has made a great difference to the properties of the material.",
+    "description": "<p>The old belief was that <b>MFC</b>, which stands for Melamine Faced Chipboards, could not be compared to MDF, since the latter is way better. However today, MFC is manufactured in a complete different way, and this has made a great difference to the properties of the material.</p>",
+    "url": "the-spacious-bed-BB-00039",
+    "meta_title": "SPACIOUS",
+    "meta_description": "",
+    "meta_keywords": "",
+    "price_special": [
+        { "price": 700.0, "from_date": "2019-01-01", "to_date": "2019-01-31" },
+        { "price": 750.0, "from_date": "2019-02-01", "to_date": "2019-02-28" }
+    ],
+    "price_groups": [
+        {
+            "store_id": 1,
+            "members_group_id": 0,
+            "type": 1,
+            "value": 680.0,
+            "from_quantity": 5,
+            "to_quantity": 10
+        },
+        {
+            "store_id": 1,
+            "members_group_id": 1,
+            "type": 2,
+            "value": 10,
+            "from_quantity": 5,
+            "to_quantity": 10
+        }
+    ],
+    "price_info": {
+        "cost": null,
+        "msrp": null,
+        "display_type": 1
+    },
+    "quantity_info": {
+        "min_qty_allowed": 0,
+        "max_qty_allowed": 0,
+        "out_of_stock_threshold": 0,
+        "stock_status": 1,
+        "notify_for_quantity": true,
+        "quantity_to_notify": 5,
+        "sell_in_box": false,
+        "items_per_box": 0,
+        "allow_requesting_when_product_out_of_stock": false
+    },
+    "categories": [1, 2, 3],
+    "stores": [1, 2],
+    "media": [
+        {
+            "type": 1,
+            "path": "photo.jpg",
+            "caption": "test file",
+            "main_photo": false,
+            "sort_order": 2
+        },
+        {
+            "type": 1,
+            "path": "photo.jpg",
+            "caption": "test file",
+            "main_photo": true,
+            "sort_order": 1
+        },
+        {
+            "type": 2,
+            "path": "video.mp4",
+            "caption": "",
+            "main_photo": false,
+            "sort_order": 3
+        }
+    ],
+    "brands": [1, 2, 3],
+    "suppliers": [1, 2, 3],
+    "tags": [1, 2, 3],
+    "files": [
+        { "path": "tech.pdf", "caption": "test file", "sort_order": 1 },
+        { "path": "tech2.pdf", "caption": "test file", "sort_order": 2 }
+    ],
+    "product_display": [5, 3, 6],
+    "related_products": [6, 9, 8],
+    "similar_products": [10, 11, 12, 13]
+}
