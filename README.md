@@ -4,10 +4,10 @@ Demo Project
 
 #IMPORTANT NOTES:
 
--   The following files were attached with the project for convenience (can be found in the root folder):
+-   The following files were attached with the project for convenience (can be found under the root folder):
 
-    1. ERD Model
-    2. Postman sample requests collection
+    1. ERD Model (ERD.png)
+    2. Postman sample requests collection (Products.postman_collection.json)
     3. Product.json example file
 
 *   Please set the DB connection to the one used on your machine in the ".env" file.
