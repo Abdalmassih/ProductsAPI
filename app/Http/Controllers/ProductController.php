@@ -166,7 +166,7 @@ class ProductController extends Controller
                 'similarProducts',
             ])->findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return response()->json("Document Not Found", 404);
+            return response()->json("Product Not Found", 404);
         }
         return response()->json($product, 200);
     }
@@ -194,7 +194,7 @@ class ProductController extends Controller
         $product = Product::with('priceInfo', 'priceSpecials', 'categories')->findOrFail($id);
 
         $validator = \Validator::make($request->all(), [
-            'name' => ['string', 'required', Rule::unique('products')->ignore($id), 'max:255'],
+            'name' => ['string', 'required', 'unique:products,name,null,id', 'max:255'],
             'sku' => 'string|required|max:255',
             'tax_type' => 'required|max:255',
             'url' => 'string|required|max:255',
@@ -214,11 +214,6 @@ class ProductController extends Controller
             'price_specials.price' => 'numeric',
             'price_specials.from_date' => 'date|before_or_equal:to_date',
             'price_specials.to_date' => 'date|after_or_equal:from_date',
-
-            //price_info
-            'price_info.cost' => 'integer|nullable',
-            'price_info.msrp' => 'integer|nullable',
-            'price_info.display_type' => 'in:1,2,3|required',
 
             //other product children validation should simply follow the same pattern...
         ]);
@@ -248,11 +243,20 @@ class ProductController extends Controller
 
             $product->categories()->sync($request->categories, false);
 
-            foreach ($request->items as $item) {
-                $product_item = self::createproductItem($item);
-                $product_item->product()->associate($product->id);
-                $product_item->save();
-                $product_item->tags()->attach($item['tags']);
+            $addedPriceSpecials = $request->price_specials['add'];
+            $updatedPriceSpecials = $request->price_specials['update'];
+            $deletedPriceSpecialsIds = $request->price_specials['del'];
+
+            foreach ($addedPriceSpecials as $ps) {
+                $product->priceSpecials()->save(new \App\PriceSpecial($ps));
+            }
+
+            foreach ($updatedPriceSpecials as $ps) {
+                $product->priceSpecials()->update((new \App\PriceSpecial($ps))->toArray());
+            }
+
+            foreach ($deletedPriceSpecialsIds as $psId) {
+                \App\PriceSpecial::where('id', $psId)->delete();
             }
 
         });
@@ -271,7 +275,7 @@ class ProductController extends Controller
         try {
             $product = Product::with(['stores'])->findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return response()->json("Document Not Found", 404);
+            return response()->json("Product Not Found", 404);
         }
         // if (!empty($product->stores)) {
         //     return response()->json("Product is related to store", 422);
