@@ -20,7 +20,7 @@ class ProductController extends Controller
     {
         $itemsCount = (int) $request->itemsCount ?? null;
         //if no pagination items passed, return all products
-        $products = ($itemsCount) ? DB::table('products')->paginate($itemsCount) : $products = DB::table('products')->get();
+        $products = $itemsCount ? DB::table('products')->paginate($itemsCount) : DB::table('products')->get();
         return response()->json($products, 200);
     }
 
