@@ -241,7 +241,7 @@ class ProductController extends Controller
 
             $product->save();
 
-            $product->categories()->sync($request->categories, false);
+            $product->categories()->sync($request->categories);
 
             $addedPriceSpecials = $request->price_specials['add'];
             $updatedPriceSpecials = $request->price_specials['update'];
